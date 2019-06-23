@@ -1,6 +1,6 @@
 require('../spec.helper');
 
-context('Your Description of the test scenario', () => {
+describe('User can input a value and get FizzBuzz results', () => {
   // Initialize a browser and visit the server's root path
   before(async () => {
     await browser.init()
@@ -10,15 +10,17 @@ context('Your Description of the test scenario', () => {
   // Reload before each test 
   beforeEach(async () => {
     await browser.page.reload();
-  });
+  })
 
   // Make sure the browser closes after the test is finished
-  after(() => {
-    browser.close();
-  });
-
-  // Example test
-  it('renders the correct page title', async () => {
-    expect(await browser.page.title()).to.eql('Puppeteer Mocha Scaffold');
-  });
-});
+  after (async () => {
+    await browser.close();
+  })
+// EXAMPLE TEST
+  it('clicking on the FIZBUZZ button', async () => {
+    await browser.fillIn("input[id='value']", { with:  "3" })
+    await browser.clickOnButton("button[value='Check']")
+    let content = await browser.getContent("[id='display_answer']")
+    expect(content).to.eql('Fizz');
+  })
+})

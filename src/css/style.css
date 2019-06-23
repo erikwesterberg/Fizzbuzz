@@ -1,0 +1,25 @@
+.body {
+background-color: black;
+width: 100% !important;
+height: 100% !important;
+}
+.container {
+    margin: auto;
+    padding: 50px;
+    text-align: center; 
+    height: 100%;
+    width: 70%;
+}
+.headercolor {
+  font-weight: bold;
+  color: yellow;
+  font-size: 128px;
+}
+.text-center {
+    font-weight: bold;
+    color: white;
+    font-size: 32px;
+}
+.result {
+    color: yellow;
+}

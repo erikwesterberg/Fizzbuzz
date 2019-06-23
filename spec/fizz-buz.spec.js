@@ -1,5 +1,4 @@
-require('./spec.helper')
-// require('../src/js/fizzbuzz')
+require('../spec/spec.helper')
 
 describe('Fizz Buzz', () => {
     let fizzBuzz = new FizzBuzz

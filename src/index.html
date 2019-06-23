@@ -4,9 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Puppeteer Mocha Scaffold</title>
+    <title>FizzBuzz</title>
+    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 </head>
-<body>
-    <!-- Place your content here -->
+<body class="body">
+
+        <div class="container">
+        <h1 class="headercolor">FizzBuzz!</h1>
+        <br>
+        <h3 class="text-center">Any number divisible by three is replaced by the word fizz and any divisible by five by the word buzz. Numbers divisible by 15, which is both become FIZZBUZZ</h3>
+        <br>
+        <br>
+        <br>
+        <div type="text" class="ui action input">
+        <input id='value' type="text" placeholder="NUMBER..">
+        </div>
+        <button type="submit" value='Check' id='button' class="ui inverted yellow button">FIZZBUZZ</button>
+        <button onclick="reload()" type='button' id="reload-button" class="ui inverted yellow button">RELOAD</button>
+        <div id='display_answer' class="ui yellow message">IF YOUR LUCKY THE RESULT WILL APPEAR HERE</div>
+        <script src="js/fizzbuzz.js"></script>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        let button = document.getElementById('button')
+        let displayDiv = document.getElementById('display_answer')
+        button.addEventListener('click', () =>{
+        let value = document.getElementById('value').value
+        let fizzBuzz = new FizzBuzz
+        let result = fizzBuzz.check(value)
+        displayDiv.innerHTML = result;
+        })
+        })
+        </script>
+
 </body>
 </html>
